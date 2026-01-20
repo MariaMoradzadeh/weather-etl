@@ -10,6 +10,9 @@ help:
 	@echo "  make run       Run the ETL pipeline"
 	@echo "  make fmt       Format (ruff)"
 	@echo "  make lint      Lint (ruff)"
+	@echo "  make precommit-install  Install pre-commit hooks"
+	@echo "  make precommit          Run pre-commit on all files"
+	@echo "  make check              Run lint + pre-commit"
 
 up:
 	docker compose up -d
