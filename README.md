@@ -62,3 +62,5 @@ docker compose exec db psql -U etl -d etldb -c "SELECT location_name, COUNT(*) F
 ![Results Screenshot](screenshots/results.jpeg)
 
 
+## Issues
+- Tracking: https://github.com/MariaMoradzadeh/weather-etl/issues/1
