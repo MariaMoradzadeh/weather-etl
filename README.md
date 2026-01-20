@@ -38,6 +38,12 @@ python -m src.run_pipeline
 ## Verify
 docker compose exec db psql -U etl -d etldb -c "SELECT location_name, COUNT(*) FROM weather_hourly GROUP BY location_name ORDER BY location_name;"
 
+## Analytics (KPI)
+
+Run KPI queries:
+```bash
+docker compose exec -T db psql -U etl -d etldb < sql/analytics.sql
+
 ## Results
 
 Verified the pipeline loads **168 hourly rows per location** into PostgreSQL (Helsinki & Vaasa).
