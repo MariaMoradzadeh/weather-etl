@@ -54,7 +54,7 @@ SELECT location_name, COUNT(*)
 FROM weather_hourly
 GROUP BY location_name
 ORDER BY location_name;
-## Results
+
 
 Loaded **168 hourly rows per location** into PostgreSQL (Helsinki & Vaasa).
 
