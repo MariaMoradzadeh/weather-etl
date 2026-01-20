@@ -7,6 +7,7 @@ from .logger import get_logger
 
 log = get_logger()
 
+
 def _conn():
     return psycopg2.connect(
         host=settings.DB_HOST,
@@ -16,13 +17,15 @@ def _conn():
         password=settings.DB_PASSWORD,
     )
 
+
 def _get_last_ts(conn) -> object:
     with conn.cursor() as cur:
         cur.execute(
             "SELECT MAX(ts) FROM weather_hourly WHERE location_name = %s;",
-            (settings.LOCATION_NAME,)
+            (settings.LOCATION_NAME,),
         )
         return cur.fetchone()[0]
+
 
 def load(processed_path: Path) -> int:
     df = pd.read_parquet(processed_path)
@@ -32,7 +35,9 @@ def load(processed_path: Path) -> int:
         if last_ts is not None:
             before = len(df)
             df = df[df["ts"] > pd.Timestamp(last_ts)]
-            log.info(f"Incremental filter: last_ts={last_ts} | kept {len(df)}/{before} rows")
+            log.info(
+                f"Incremental filter: last_ts={last_ts} | kept {len(df)}/{before} rows"
+            )
         else:
             log.info("No existing rows found for this location. Full load.")
 

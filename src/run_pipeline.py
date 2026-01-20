@@ -7,6 +7,7 @@ from .load import load
 
 log = get_logger()
 
+
 def run():
     t0 = perf_counter()
     log.info("Pipeline started")
@@ -24,6 +25,7 @@ def run():
     log.info(f"Load done: inserted/updated {n} rows")
 
     log.info(f"Pipeline finished in {perf_counter() - t0:.2f}s")
+
 
 if __name__ == "__main__":
     run()

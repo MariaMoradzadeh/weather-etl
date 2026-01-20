@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
+
 @dataclass
 class Settings:
     DB_HOST: str = os.getenv("DB_HOST", "localhost")
@@ -15,5 +16,6 @@ class Settings:
     LOCATION_NAME: str = os.getenv("LOCATION_NAME", "Vaasa")
     LAT: float = float(os.getenv("LAT", "63.0951"))
     LON: float = float(os.getenv("LON", "21.6165"))
+
 
 settings = Settings()

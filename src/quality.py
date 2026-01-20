@@ -1,6 +1,7 @@
 from pathlib import Path
 import pandas as pd
 
+
 def run_quality_checks(processed_path: Path) -> None:
     df = pd.read_parquet(processed_path)
 
