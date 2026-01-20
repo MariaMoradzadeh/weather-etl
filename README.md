@@ -12,6 +12,7 @@ flowchart LR
   F -->|UPSERT / Incremental| G[(PostgreSQL)]
   G --> H[Analytics / SQL Queries]
 ```
+![CI](https://github.com/MariaMoradzadeh/weather-etl/actions/workflows/ci.yml/badge.svg)
 # Weather ETL Pipeline (Open-Meteo → Parquet → PostgreSQL)
 
 An end-to-end data engineering mini project:
