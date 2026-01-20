@@ -1,6 +1,7 @@
 ![Python](https://img.shields.io/badge/Python-3.x-blue)
 ![Docker](https://img.shields.io/badge/Docker-Compose-blue)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue)
+https://github.com/MariaMoradzadeh/weather-etl/actions/runs/21175767321
 ## Architecture
 ```mermaid
 flowchart LR
