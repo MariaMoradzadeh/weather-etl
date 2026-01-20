@@ -25,11 +25,6 @@ jobs:
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           pip install ruff
 
-      - name: Lint (ruff)
+      - name: Run checks (Makefile)
         run: |
-          ruff --version
-          ruff check .
-
-      - name: Import check
-        run: |
-          python -c "import src"
+          make check
