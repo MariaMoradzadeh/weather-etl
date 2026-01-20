@@ -58,4 +58,7 @@ docker compose exec db psql -U etl -d etldb -c "SELECT location_name, COUNT(*) F
  Helsinki      |   168
  Vaasa         |   168
 
+```
+![Results Screenshot](screenshots/results.jpeg)
+
 
