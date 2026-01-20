@@ -1,3 +1,6 @@
+![Python](https://img.shields.io/badge/Python-3.x-blue)
+![Docker](https://img.shields.io/badge/Docker-Compose-blue)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue)
 ## Architecture
 ```mermaid
 flowchart LR
@@ -32,3 +35,27 @@ python -m src.run_pipeline
 
 ## Verify
 docker compose exec db psql -U etl -d etldb -c "SELECT location_name, COUNT(*) FROM weather_hourly GROUP BY location_name ORDER BY location_name;"
+
+## Results
+
+Verified the pipeline loads **168 hourly rows per location** into PostgreSQL (Helsinki & Vaasa).
+
+Query:
+```sql
+SELECT location_name, COUNT(*)
+FROM weather_hourly
+GROUP BY location_name
+ORDER BY location_name;
+## Results
+
+Loaded **168 hourly rows per location** into PostgreSQL (Helsinki & Vaasa).
+
+Example query:
+```bash
+docker compose exec db psql -U etl -d etldb -c "SELECT location_name, COUNT(*) FROM weather_hourly GROUP BY location_name ORDER BY location_name;"
+ location_name | count
+---------------+-------
+ Helsinki      |   168
+ Vaasa         |   168
+
+
