@@ -1,3 +1,14 @@
+## Architecture
+```mermaid
+flowchart LR
+  A[Open-Meteo API] -->|HTTP JSON| B[Extract]
+  B --> C[data/raw/*.json]
+  C --> D[Transform]
+  D --> E[data/processed/*.parquet]
+  E --> F[Quality Checks]
+  F -->|UPSERT / Incremental| G[(PostgreSQL)]
+  G --> H[Analytics / SQL Queries]
+```
 # Weather ETL Pipeline (Open-Meteo → Parquet → PostgreSQL)
 
 An end-to-end data engineering mini project:
