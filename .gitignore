@@ -1,20 +1,10 @@
-# Virtual env
 .venv/
-venv/
-
-# Python
 __pycache__/
 *.pyc
-
-# Env
 .env
-
-# Data outputs
 data/raw/*
 data/processed/*
 *.parquet
 *.json
 *.csv
-
-# OS
 .DS_Store
