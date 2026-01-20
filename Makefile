@@ -36,6 +36,17 @@ fmt:
 lint:
 	python -m pip install -q ruff
 	ruff check .
+	
 
+precommit-install:
+	python -m pip install -q pre-commit ruff
+	pre-commit install
+
+precommit:
+	pre-commit run --all-files
+
+check:
+	$(MAKE) lint
+	$(MAKE) precommit
 
 
